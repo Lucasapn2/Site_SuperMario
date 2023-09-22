@@ -12,20 +12,46 @@
   <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;600&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
-    body {
+  body {
       background-color: rgba(0, 0, 0, 0.8);
+      margin: 0; /* Remova as margens padrão para preencher a tela inteira */
+    }
+    #background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1; /* Coloque o vídeo em um z-index inferior para que não cubra o conteúdo */
+    }
+    video {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+    #app {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh; /* Faça com que o conteúdo ocupe a altura total da tela */
+      text-align: center;
+      color: white;
     }
     .main_info {
-      background-color: rgba(0, 0, 0, 0.5); /* Cor preta com 50% de transparência */
+      background-color: rgba(0, 0, 0, 0.5);
       padding: 20px;
       border-radius: 10px;
       text-align: center;
       margin-top: 20px;
+      max-width: 800px; /* Defina uma largura máxima para evitar que o conteúdo fique muito largo em telas grandes */
+      width: 90%; /* Use uma largura relativa para que o conteúdo se ajuste em diferentes tamanhos de tela */
     }
     .login-container {
       display: flex;
       flex-direction: column;
       align-items: center;
+      margin-top: 20px;
     }
     .login-container h2 {
       margin-bottom: 10px;
@@ -63,6 +89,23 @@
     }
     .login-options input[type="checkbox"] {
       margin-right: 10px;
+    }
+    .login-image {
+      margin-top: 20px;
+    }
+    @media (min-width: 768px) {
+      /* Adicione estilos específicos para telas maiores, por exemplo, tablets e desktops */
+      .main_info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .login-container {
+        width: 50%; /* Reduza a largura do formulário para ocupar metade da tela em telas maiores */
+      }
+      .login-image {
+        width: 50%; /* Defina a largura da imagem para ocupar a outra metade da tela */
+      }
     }
   </style>
 </head>
@@ -137,9 +180,7 @@
         </div>
       </form>
     </div>
-    <p>
-      <!-- Adicione seu conteúdo de texto aqui... -->
-    </p>
+    
     <img src="./assets/image-removebg-preview (6).png" alt="Mario and Luigi" width="210px" height="250px">
   </div>
 </div>
